@@ -1,0 +1,21 @@
+<%- include('partials/header') -%>
+
+    <h1>Home</h1>
+    <p><%= p1 %></p>
+
+<% hitposts.forEach(function(hitpost){ %>
+
+    <h1><%= hitpost.title %></h1> 
+    <% let toy = hitpost.post; %>
+    <% if(toy.length > 100){  %>
+        <% let toys = toy.slice(0,100) + '...'; %>
+        <p><%= toys %> <a href="/post/<%= hitpost.title %>">Read me</a></p>
+    <% } else { %>
+        <p><%= toy %></p>
+    <%    } %>
+    
+<%  }); %>
+
+
+
+<%- include('partials/footer') -%>
